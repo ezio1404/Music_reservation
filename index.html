@@ -146,8 +146,8 @@
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="view/assets/img/portfolio/fullsize/2.jpg">
-              <img class="img-fluid" src="view/assets/img/portfolio/thumbnails/2.jpg" alt="">
+            <a class="portfolio-box" href="view/assets/img/portfolio/fullsize/2.png">
+              <img class="img-fluid" src="view/assets/img/portfolio/thumbnails/2.png" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -266,7 +266,24 @@
 
     <!-- Custom scripts for this template -->
     <script src="view/assets/js/creative.min.js"></script>
-
+    <script>
+      var myIndex = 0;
+      carousel();
+    
+      function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for(i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        myIndex++;
+        if(myIndex > x.length) {
+          myIndex = 1
+        }
+        x[myIndex - 1].style.display = "block";
+        setTimeout(carousel, 4000);
+      }
+      </script>
   </body>
 
 </html>
