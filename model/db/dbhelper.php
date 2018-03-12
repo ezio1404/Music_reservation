@@ -6,7 +6,7 @@ Class DBHelper{
 		private $hostname='localhost'; //127.0.0.1
 		private $username='root';
 		private $password='';
-		private $database='locker_db';
+		private $database='music_db';
 		private $conn;
 // Constructor
 function __construct(){
