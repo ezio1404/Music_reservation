@@ -6,8 +6,7 @@ Class Subscription extends DBHelper{
     private $table = 'tbl_subscription';
     private $fields = array(
         'subscription_name',
-        'subscription_price',
-        'subscription_status'
+        'subscription_price'
     );
 //constructor
     function __construct(){
