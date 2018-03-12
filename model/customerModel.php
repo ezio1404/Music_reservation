@@ -5,7 +5,6 @@ require 'db/dbhelper.php';
 Class Customer extends DBHelper{
     private $table = 'tbl_customer';
     private $fields = array(
-        'cust_name',
         'cust_fname',
         'cust_lname',
         'cust_email',
