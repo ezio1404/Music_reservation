@@ -290,36 +290,33 @@
       </div>
       <div class="col-lg-6">
           <h2 class="section-heading">Don't have an Account ?</h2>
-          <form>
+          <form method="POST" action="controller/customerController/addCustomer.php">
               <div class="form-group">
                 <div class="form-row">
                   <div class="col-md-6">
                     <label for="exampleInputName">First name</label>
-                    <input class="form-control" id="exampleInputName" type="text" aria-describedby="nameHelp" placeholder="Enter first name">
+                    <input class="form-control" id="fname" name="cust_fname" type="text" aria-describedby="nameHelp" placeholder="Enter first name">
                   </div>
                   <div class="col-md-6">
                     <label for="exampleInputLastName">Last name</label>
-                    <input class="form-control" id="exampleInputLastName" type="text" aria-describedby="nameHelp" placeholder="Enter last name">
+                    <input class="form-control" id="lname"  name="cust_lname" type="text" aria-describedby="nameHelp" placeholder="Enter last name">
                   </div>
                 </div>
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
-                <input class="form-control" id="exampleInputEmail1" type="email" aria-describedby="emailHelp" placeholder="Enter email">
+                <input class="form-control" id="email" type="email" name="cust_email" aria-describedby="emailHelp" placeholder="Enter email">
               </div>
               <div class="form-group">
                 <div class="form-row">
-                  <div class="col-md-6">
+                  <div class="col-md-12">
                     <label for="exampleInputPassword1">Password</label>
-                    <input class="form-control" id="exampleInputPassword1" type="password" placeholder="Password">
-                  </div>
-                  <div class="col-md-6">
-                    <label for="exampleConfirmPassword">Confirm password</label>
-                    <input class="form-control" id="exampleConfirmPassword" type="password" placeholder="Confirm password">
+                    <input class="form-control" id="password" name="cust_password" type="password" placeholder="Password">
                   </div>
                 </div>
               </div>
-              <a class="btn btn-primary btn-block" href="login.html">Register</a>
+              <!-- <a class="btn btn-primary btn-block" href="">Register</a> -->
+              <input class="btn btn-primary btn-block" type="submit" name="addCust" value="Register">
             </form>
       </div>
       <div class="col-lg-3">
