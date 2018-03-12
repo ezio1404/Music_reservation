@@ -1,4 +1,8 @@
-
+<?php 
+        include '../model/subscriptionModel.php';
+        $subscription = new Subscription();
+        $subs=$subscription->getAllSubs();
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -34,11 +38,7 @@
 
     <div class="container">
       <div class="card-deck mb-3 text-center">
-        <?php 
-        include '../model/subscriptionModel.php';
-        $subscription = new Subscription();
-        $subs=$subscription->getAllSubs();
-        foreach($subs as $row){ ?>
+        <?php foreach($subs as $row){ ?>
         <div class="card mb-4 box-shadow">
           <div class="card-header">
             <h4 class="my-0 font-weight-normal"><?php echo$row['subscription_name']?></h4>
@@ -56,7 +56,7 @@
         <!--  -->
       <footer class="pt-4 my-md-5 pt-md-5 border-top">
         <div class="container">
-             <p class="m-0 text-center">Copyright &copy; Your Website 2018</p>
+             <p class="m-0 text-center">Copyright &copy; Music Reservation 2018</p>
          </div>
       </footer>
       <!--  -->
@@ -66,18 +66,60 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
     <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
+        <h5 class="modal-title">Add Admin</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <p>Modal body text goes here.</p>
+      <form>
+        <!-- kuwang og subscription ID and actions -->
+      <div class="form-group">
+        <div class="form-row">
+          <div class="col-md-6">
+            <label for="exampleInputName">Studio name</label>
+            <input class="form-control" id="exampleInputName" name="studio_name" type="text" aria-describedby="nameHelp" placeholder="Studio name">
+          </div>
+          <div class="col-md-6">
+            <label for="exampleInputLastName">Studio Description</label>
+            <input class="form-control" id="exampleInputLastName" name="studio_desc" type="text" aria-describedby="nameHelp" placeholder="Studio Description">
+          </div>
+          <div class="col-md-6">
+            <label for="exampleInputName">Studio Address</label>
+            <input class="form-control" id="exampleInputName"  name="studio_address" type="text" aria-describedby="nameHelp" placeholder="Studio Address">
+          </div>
+          <div class="col-md-6">
+            <label for="exampleInputLastName">Studio Contact</label>
+            <input class="form-control" id="exampleInputLastName" name="studio_contact" type="text" aria-describedby="nameHelp" placeholder="Studio Contact">
+          </div>
+          <div class="col-md-6">
+            <label for="exampleInputPassword1">Hour Open</label>
+            <input class="form-control" id="exampleInputPassword1" name="hour_open" type="time" placeholder="Hour Open">
+          </div>
+          <div class="col-md-6">
+            <label for="exampleConfirmtext">Hour Close</label>
+            <input class="form-control" id="exampleConfirmtext"  name="hour_close" type="time" placeholder="Hour Close">
+          </div>
+          <div class="col-md-6">
+            <label for="exampleInputtext1">Owner First name</label>
+            <input class="form-control" id="exampleInputtext1" name="owner_fname" type="text" placeholder="Owner First nametext">
+          </div>
+          <div class="col-md-6">
+            <label for="exampleConfirmtext">Owner Last name</label>
+            <input class="form-control" id="exampleConfirmtext" name="owner_lname" type="text" placeholder="Owner Last name">
+          </div>
+          <div class="col-md-12">
+            <label for="exampleInputtext1">Owner email</label>
+            <input class="form-control" id="exampleInputtext1" name="owner_email" type="email" placeholder="Owner email">
+          </div>
+        </div>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary">Submit</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
+    </form>
     </div>
   </div>
 </div>
