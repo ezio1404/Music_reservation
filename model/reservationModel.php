@@ -21,6 +21,12 @@ Class Reservation extends DBHelper{
 function addReservation($data){
     return DBHelper::insertRecord($data,$this->fields,$this->table); 
  }
+ function getReservationById($ref_id){
+    return DBHelper::getRecordById($this->table,'res_id',$ref_id);
+}
+function getReservation($ref_id){
+    return DBHelper::getRecord($this->table.' rs','rs.res_id',$ref_id);
+}
 // Retreive
  function getAllReservation(){
      return DBHelper::getAllRecord($this->table);

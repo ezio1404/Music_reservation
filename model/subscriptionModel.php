@@ -20,6 +20,12 @@ function addSubs($data){
  function getAllSubs(){
      return DBHelper::getAllRecord($this->table);
  }
+ function getSubsById($ref_id){
+    return DBHelper::getRecordById($this->table,'subscription_id',$ref_id);
+}
+function getSubs($ref_id){
+    return DBHelper::getRecord($this->table.' s','s.subscription_id',$ref_id);
+}
 // Update
 function updateSubs($data,$ref_id){
     return DBHelper::updateRecord($this->table.'s',$this->fields,$data,'s.subscription_id',$ref_id); 

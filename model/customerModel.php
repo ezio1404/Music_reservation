@@ -22,6 +22,12 @@ function addCust($data){
  function getAllCust(){
      return DBHelper::getAllRecord($this->table);
  }
+ function getCustById($ref_id){
+    return DBHelper::getRecordById($this->table,'cust_id',$ref_id);
+}
+function getCust($ref_id){
+    return DBHelper::getRecord($this->table.' c','c.cust_id',$ref_id);
+}
 // Update
 function updateCust($data,$ref_id){
     return DBHelper::updateRecord($this->table.'c',$this->fields,$data,'c.cust_id',$ref_id); 

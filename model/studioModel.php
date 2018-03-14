@@ -31,6 +31,12 @@ function addStudio($data){
  function getAllStudio(){
      return DBHelper::getAllRecord($this->table);
  }
+ function getStudioById($ref_id){
+    return DBHelper::getRecordById($this->table,'studio_id',$ref_id);
+}
+function getStudio($ref_id){
+    return DBHelper::getRecord($this->table.'st','st.studio_id',$ref_id);
+}
 // Update
 function updateStudio($data,$ref_id){
     return DBHelper::updateRecord($this->table.'st',$this->fields,$data,'st.studio_id',$ref_id); 

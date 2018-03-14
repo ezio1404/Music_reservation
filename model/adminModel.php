@@ -18,6 +18,12 @@ Class Admin extends DBHelper{
 function addAdmin($data){
     return DBHelper::insertRecord($data,$this->fields,$this->table); 
  }
+ function getAdminById($ref_id){
+    return DBHelper::getRecordById($this->table,'admin_id',$ref_id);
+}
+function getAdmin($ref_id){
+    return DBHelper::getRecord($this->table.' a','a.admin_id',$ref_id);
+}
 // Retreive
  function getAllAdmin(){
      return DBHelper::getAllRecord($this->table);

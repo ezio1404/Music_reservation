@@ -13,9 +13,30 @@ if(isset($_POST['addStudio'])){
 	$owner_fname =  htmlentities($_POST['owner_fname']);
     $owner_lname =  htmlentities($_POST['owner_lname']);
     $owner_email =  htmlentities($_POST['owner_email']);
-    // $subscription_start =  htmlentities($_POST['subscription_start']);
-    // $subscription_end =  htmlentities($_POST['subscription_end']);
-    $studioArr=array($subscription_id ,$studio_name,$studio_desc,$studio_address,$studio_contact,$hour_open,$hour_close,$owner_fname,$owner_lname,$owner_email);
+    $subscription_start =  htmlentities($_POST['subscription_start']);
+    $start = new DateTime( $subscription_start, new DateTimeZone("UTC"));
+    $month_later = clone $start;
+    switch ($subscription_id) {
+        case '1':
+            $month_later->add(new DateInterval("P1M"));
+            break;
+            case '4':
+            $month_later->add(new DateInterval("P4M"));
+            break;
+            case '6':
+            $month_later->add(new DateInterval("P6M"));
+            break;
+            case '12':
+            $month_later->add(new DateInterval("P12M"));
+            break;    
+            
+        default:
+            # code...
+            break;
+    }
+    $subscription_end =$month_later->format('Y-m-d');
+
+    $studioArr=array($subscription_id ,$studio_name,$studio_desc,$studio_address,$studio_contact,$hour_open,$hour_close,$owner_fname,$owner_lname,$owner_email,$subscription_start, $subscription_end);
     for($i=0;$i<count($studioArr);$i++){
         if($studioArr[$i]==""){
             $flag=false;

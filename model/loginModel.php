@@ -11,4 +11,8 @@ Class Login extends DBHelper{
     function signIn($email,$pass){
         return DBHelper::logginUser($email,$pass);
     }
+    function signInOwner($email,$pass){
+        return DBHelper::logginAdmin($email,$pass);
+    }
+
 }

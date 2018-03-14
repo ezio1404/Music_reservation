@@ -25,6 +25,12 @@ function addRoom($data){
  function getAllRoom(){
      return DBHelper::getAllRecord($this->table);
  }
+ function getRoomById($ref_id){
+    return DBHelper::getRecordById($this->table,'room_id',$ref_id);
+}
+function getRoom($ref_id){
+    return DBHelper::getRecord($this->table.' r','r.room_id',$ref_id);
+}
 // Update
 function updateRoom($data,$ref_id){
     return DBHelper::updateRecord($this->table.'r',$this->fields,$data,'r.room_id',$ref_id); 

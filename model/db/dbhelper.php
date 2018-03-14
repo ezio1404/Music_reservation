@@ -33,6 +33,24 @@ function __construct(){
         $this->conn = null;
         return $flag;
     }
+    function logginOwner($user,$pass){
+        $flag=false;
+            $sql2 = "SELECT * FROM tbl_studio WHERE owner_email = ? AND owner_password = ?";
+            $stmt2 = $this->conn->prepare($sql2);
+            $stmt2->execute(array($user,$pass));
+            $row2 = $stmt2->fetch(PDO::FETCH_ASSOC);
+            if($stmt2->rowCount() > 0){
+                $_SESSION['studio'] = $row2['owner_fname'].' '.$row2['owner_lname'];
+                $_SESSION['studio_id'] = $row2['studio_id'];
+                echo "<script> window.location='../../view/admin/index.html?$_SESSION[studio]'; </script>";
+                $flag=true;
+            }else{
+               echo "<script> alert('Error'); </script>";
+            }
+        
+        $this->conn = null;
+        return $flag;
+    }
 // Create
     function insertRecord($data,$fields,$table){
         $ok;

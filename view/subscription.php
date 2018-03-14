@@ -2,6 +2,7 @@
         include '../model/subscriptionModel.php';
         $subscription = new Subscription();
         $subs=$subscription->getAllSubs();
+        date_default_timezone_set ('Asia/Hong_Kong');
 ?>
 <!doctype html>
 <html lang="en">
@@ -47,7 +48,7 @@
             <h1 class="card-title pricing-card-title">₱<?php echo$row['subscription_price']?> <small class="text-muted"></small></h1>
             <ul class="list-unstyled mt-3 mb-4">
             </ul>
-            <button type="button" class="btn btn-lg btn-block btn-outline-primary" data-toggle="modal" data-target="#myModal">Subscribe now</button>
+            <button type="button" class="btn btn-lg btn-block btn-outline-primary" onclick="openmodal('<?php echo $row['subscription_id'];?>');">Subscribe now</button>
           </div>
         </div>
         <?php } ?>
@@ -76,43 +77,44 @@
         <!-- kuwang og subscription ID and actions -->
       <div class="form-group">
         <div class="form-row">
-		  <!-- <input class="form-control" id="exampleInputName" name="subscription_id" hidden type="text" value="<?php echo 2;?>"> -->
-
+		  <input class="form-control" name="subscription_start" type="hidden" value="<?php echo date("Y-m-d");?>">
+      <input class="form-control" name="subscription_id" id="subsid" type="hidden" value="">
+      
           <div class="col-md-6">
             <label for="exampleInputName">Studio name</label>
-            <input class="form-control" id="exampleInputName" name="studio_name" type="text" aria-describedby="nameHelp" placeholder="Studio name">
+            <input class="form-control" name="studio_name" type="text" aria-describedby="nameHelp" placeholder="Studio name">
           </div>
           <div class="col-md-6">
             <label for="exampleInputLastName">Studio Description</label>
-            <input class="form-control" id="exampleInputLastName" name="studio_desc" type="text" aria-describedby="nameHelp" placeholder="Studio Description">
+            <input class="form-control"  name="studio_desc" type="text" aria-describedby="nameHelp" placeholder="Studio Description">
           </div>
           <div class="col-md-6">
             <label for="exampleInputName">Studio Address</label>
-            <input class="form-control" id="exampleInputName"  name="studio_address" type="text" aria-describedby="nameHelp" placeholder="Studio Address">
+            <input class="form-control"  name="studio_address" type="text" aria-describedby="nameHelp" placeholder="Studio Address">
           </div>
           <div class="col-md-6">
             <label for="exampleInputLastName">Studio Contact</label>
-            <input class="form-control" id="exampleInputLastName" name="studio_contact" type="text" aria-describedby="nameHelp" placeholder="Studio Contact">
+            <input class="form-control"  name="studio_contact" type="text" aria-describedby="nameHelp" placeholder="Studio Contact">
           </div>
           <div class="col-md-6">
             <label for="exampleInputPassword1">Hour Open</label>
-            <input class="form-control" id="exampleInputPassword1" name="hour_open" type="time" placeholder="Hour Open">
+            <input class="form-control"  name="hour_open" type="time" placeholder="Hour Open">
           </div>
           <div class="col-md-6">
             <label for="exampleConfirmtext">Hour Close</label>
-            <input class="form-control" id="exampleConfirmtext"  name="hour_close" type="time" placeholder="Hour Close">
+            <input class="form-control"   name="hour_close" type="time" placeholder="Hour Close">
           </div>
           <div class="col-md-6">
             <label for="exampleInputtext1">Owner First name</label>
-            <input class="form-control" id="exampleInputtext1" name="owner_fname" type="text" placeholder="Owner First nametext">
+            <input class="form-control"  name="owner_fname" type="text" placeholder="Owner First nametext">
           </div>
           <div class="col-md-6">
             <label for="exampleConfirmtext">Owner Last name</label>
-            <input class="form-control" id="exampleConfirmtext" name="owner_lname" type="text" placeholder="Owner Last name">
+            <input class="form-control"  name="owner_lname" type="text" placeholder="Owner Last name">
           </div>
           <div class="col-md-12">
             <label for="exampleInputtext1">Owner email</label>
-            <input class="form-control" id="exampleInputtext1" name="owner_email" type="email" placeholder="Owner email">
+            <input class="form-control"  name="owner_email" type="email" placeholder="Owner email">
           </div>
         </div>
         </div>
@@ -143,4 +145,11 @@
       });
     </script> -->
   </body>
+<script>
+  function openmodal(id){
+    $('#subsid').val(id);
+    $('#myModal').modal();
+  }
+</script>
+
 </html>

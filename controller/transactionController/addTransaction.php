@@ -4,10 +4,9 @@ $Transaction = new Transaction();
 if(isset($_POST['addCust'])){ 
     $flag=true;
     $studio_id = htmlentities($_POST['studio_id']);
-    $payment_id =  htmlentities($_POST['payment_id']);
     $total_price =  htmlentities($_POST['total_price']);
     $transaction_status =  htmlentities($_POST['transaction_status']);
-    $custArr=array($studio_id, $payment_id,$total_price,$transaction_status);
+    $custArr=array($studio_id,$total_price,$transaction_status);
     for($i=0;$i<count($custArr);$i++){
         if($custArr[$i]==""){
             $flag=false;

@@ -25,6 +25,12 @@ function addSchedule($data){
  function getAllSchedule(){
      return DBHelper::getAllRecord($this->table);
  }
+ function getScheduleById($ref_id){
+    return DBHelper::getRecordById($this->table,'schedule_id',$ref_id);
+}
+function getSchedule($ref_id){
+    return DBHelper::getRecord($this->table.' sc','sc.schedule_id',$ref_id);
+}
 // Update
 function updateSchedule($data,$ref_id){
     return DBHelper::updateRecord($this->table.'sc',$this->fields,$data,'sc.schedule_id',$ref_id); 
