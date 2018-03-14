@@ -72,10 +72,12 @@
         </button>
       </div>
       <div class="modal-body">
-      <form>
+      <form method="post" action="../controller/studioController/addStudio.php">
         <!-- kuwang og subscription ID and actions -->
       <div class="form-group">
         <div class="form-row">
+		  <!-- <input class="form-control" id="exampleInputName" name="subscription_id" hidden type="text" value="<?php echo 2;?>"> -->
+
           <div class="col-md-6">
             <label for="exampleInputName">Studio name</label>
             <input class="form-control" id="exampleInputName" name="studio_name" type="text" aria-describedby="nameHelp" placeholder="Studio name">

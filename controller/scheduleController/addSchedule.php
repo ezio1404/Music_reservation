@@ -1,7 +1,7 @@
 <?php
 require '../../model/scheduleModel.php';
 $Schedule = new Schedule();
-if(isset($_POST['addschedule'])){ 
+if(isset($_POST['addSchedule'])){ 
     $flag=true;
     $studio_id = htmlentities($_POST['studio_id']);
     $room_id =  htmlentities($_POST['room_id']);

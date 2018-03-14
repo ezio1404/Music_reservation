@@ -21,5 +21,4 @@ if(isset($_POST['addAdmin'])){
      else{
          echo "ohshit";
      }
-
 }

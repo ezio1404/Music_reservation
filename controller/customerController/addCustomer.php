@@ -16,7 +16,7 @@ if(isset($_POST['addCust'])){
     }
     if($flag){
         $Customer->addCust($custArr);
-        header('location:../../view/index.html');
+        header('location:../../index.html');
      }
      else{
          echo "ohshit";

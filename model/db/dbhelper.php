@@ -17,14 +17,14 @@ function __construct(){
 // Login
     function logginUser($user,$pass){
         $flag=false;
-            $sql2 = "SELECT * FROM tbl_admin WHERE username = ? AND password = ?";
+            $sql2 = "SELECT * FROM tbl_customer WHERE cust_email = ? AND cust_password = ?";
             $stmt2 = $this->conn->prepare($sql2);
             $stmt2->execute(array($user,$pass));
             $row2 = $stmt2->fetch(PDO::FETCH_ASSOC);
             if($stmt2->rowCount() > 0){
-                $_SESSION['admin'] = $row2['firstname'].' '.$row2['lastname'];
-                $_SESSION['admin_id'] = $row2['admin_id'];
-                echo "<script> window.location='home.php?$_SESSION[admin]'; </script>";
+                $_SESSION['customer'] = $row2['cust_fname'].' '.$row2['cust_lname'];
+                $_SESSION['customer_id'] = $row2['cust_id'];
+                echo "<script> window.location='../../view/index.html?$_SESSION[customer]'; </script>";
                 $flag=true;
             }else{
                echo "<script> alert('Error'); </script>";

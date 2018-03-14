@@ -5,12 +5,12 @@ require 'db/dbhelper.php';
 Class Studio extends DBHelper{
     private $table = 'tbl_studio';
     private $fields = array(
-        'subscrption_id',
+        'subscription_id',
         'studio_name',
         'studio_desc',
         'studio_address',
         'studio_contact',
-        'studio_image',
+        // 'studio_image',
         'hour_open',
         'hour_close',
         'owner_fname',

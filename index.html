@@ -25,7 +25,7 @@
     <link href="view/assets/css/creative.min.css" rel="stylesheet">
       <style>
       img.thumbnail{
-        width: 500px;
+        width: 100%;
         height: 300px;
       }
       </style>
@@ -276,16 +276,16 @@
         <div class="row">
         <div class="col-lg-3">
             <h2 class="section-heading">Login</h2>
-        <form>
+        <form method="post" action="controller/loginController/login.php">
           <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
-            <input class="form-control" id="exampleInputEmail1" type="email" aria-describedby="emailHelp" placeholder="Enter email">
+            <input class="form-control" name="email" type="email" aria-describedby="emailHelp" placeholder="Enter email">
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
-            <input class="form-control" id="exampleInputPassword1" type="password" placeholder="Password">
+            <input class="form-control" name="password" type="password" placeholder="Password">
           </div>
-          <a class="btn btn-primary btn-block" href="index.html">Login</a>
+           <input class="btn btn-primary btn-block"  type="submit" name="login" value="Login">
         </form>
       </div>
       <div class="col-lg-6">
@@ -316,7 +316,7 @@
                 </div>
               </div>
               <!-- <a class="btn btn-primary btn-block" href="">Register</a> -->
-              <input class="btn btn-primary btn-block" id="addSWAl" type="submit" name="addCust" value="Register">
+              <input class="btn btn-primary btn-block"  type="submit" name="addCust" value="Register">
             </form>
       </div>
       <div class="col-lg-3">
@@ -338,6 +338,7 @@
     <!-- Custom scripts for this template -->
     <script src="view/assets/js/creative.min.js"></script>
     <script src="view/assets/js/sweetalert.min.js"></script>
+   /
   </body>
 
 </html>
