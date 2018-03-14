@@ -106,15 +106,51 @@
         <li class="breadcrumb-item">
           <a href="#">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">My Dashboard</li>
+        <li class="breadcrumb-item active">Music Room</li>
+        <li><button class="btn btn-primary" type="button" data-toggle="modal" data-target="#addDepartment">Add Department</button></li>
       </ol>
       <!-- Icon Cards-->
       <div class="row">
-        
+      
+
       </div>
       <!-- Area Chart Example-->
     <!-- /.container-fluid-->
     <!-- /.content-wrapper-->
+    <!-- modal satart-->
+    <div class="modal fade" tabindex="-1" role="dialog" id="addDepartment">
+				<div class="modal-dialog" style="width:40%" role="document">
+					<div class="modal-content">
+						<div class="modal-header"><h3 class="modal-title">Add Department</h3>
+							<button type="button" class="close" data-dismiss="modal"> <span>&times;</span> </button> </div>
+							
+						<div class="modal-body">
+							<form class="form-horizontal form-label-left" method="post" action="../controller/departmentController/addDept.php">
+								<div class="form-group">
+									<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Department Code <span class="required">*</span> </label>
+									<div class="col-md-9 col-sm-9 col-xs-12">
+										<input type="text" name="dept_code" required="required" class="form-control"> </div>
+								</div>
+								<div class="form-group">
+									<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Department Description<span class="required">*</span> </label>
+									<div class="col-md-9 col-sm-9 col-xs-12">
+										<input type="text" name="dept_description" required="required" class="form-control"> </div>
+								</div>
+								<div class="form-group">
+									<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Office Location<span class="required">*</span> </label>
+									<div class="col-md-9 col-sm-9 col-xs-12">
+										<input type="text" name="office_location" required="required" class="form-control"> </div>
+								</div>
+								<div class="modal-footer">
+									<button class="btn button-secondary" data-dismiss="modal" type="button">Cancel</button>
+									<button class="btn btn-primary" name="addDept" type="submit">Submit</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+    <!-- modal end -->
     <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
@@ -144,6 +180,7 @@
         </div>
       </div>
     </div>
+   
     <!-- Bootstrap core JavaScript-->
     <script src="../assets/vendor/jquery/jquery.min.js"></script>
     <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -159,6 +196,7 @@
     <script src="../assets/js/sb-admin-datatables.min.js"></script>
     <script src="../assets/js/sb-admin-charts.min.js"></script>
   </div>
+
 </body>
 
 </html>
