@@ -1,3 +1,4 @@
+
 <?php
 
 require 'db/dbhelper.php';
@@ -10,7 +11,6 @@ Class Studio extends DBHelper{
         'studio_desc',
         'studio_address',
         'studio_contact',
-        // 'studio_image',
         'hour_open',
         'hour_close',
         'owner_fname',

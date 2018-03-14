@@ -7,7 +7,7 @@ if(isset($_POST['login'])){ // button name login
     if($email!="" &&$email!="" ){
     $ok=$login->signIn($email,$password);
     if ($ok){
-    header('location:../../view/index.html'); // redirect page
+    header('location:../../view/index.html?name='.$_SESSION['customer'].''); // redirect page
     }
     else{
         header('location:../../index.html');

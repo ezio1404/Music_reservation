@@ -5,12 +5,12 @@ if(isset($_POST['login'])){ // button name login
     $email = $_POST['email'];
     $password = $_POST['password'];
     if($email!="" &&$email!="" ){
-    $ok=$login->signInOwner($email,$password);
+    $ok=$login->logginOwner($email,$password);
     if ($ok){
-    header('location:../../view/admin/index.html'); // redirect page
+    header('location:../../view/admin/index.html?id='.$_SESSION['studio_id'].''); // redirect page
     }
     else{
-        header('location:../../index.html');
+       echo '<script> window.location="../../view/admin/login.php"; </script>';
     }
 	}
 	else{

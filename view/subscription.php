@@ -120,7 +120,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Submit</button>
+      <input type="submit"  class="btn btn-primary" name="addStudio" value="Submit">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </form>
@@ -145,6 +145,7 @@
       });
     </script> -->
   </body>
+
 <script>
   function openmodal(id){
     $('#subsid').val(id);

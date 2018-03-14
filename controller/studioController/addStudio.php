@@ -1,3 +1,4 @@
+
 <?php
 require '../../model/studioModel.php';
 $Studio = new Studio();
@@ -20,18 +21,14 @@ if(isset($_POST['addStudio'])){
         case '1':
             $month_later->add(new DateInterval("P1M"));
             break;
-            case '4':
+            case '2':
             $month_later->add(new DateInterval("P4M"));
             break;
-            case '6':
+            case '3':
             $month_later->add(new DateInterval("P6M"));
             break;
-            case '12':
+            case '4':
             $month_later->add(new DateInterval("P12M"));
-            break;    
-            
-        default:
-            # code...
             break;
     }
     $subscription_end =$month_later->format('Y-m-d');
@@ -45,7 +42,7 @@ if(isset($_POST['addStudio'])){
     }
     if($flag){
         $Studio->addStudio($studioArr);
-        header('location:../../view/index.html');
+        echo '<script> alert("successfully added"); window.location="../../view/admin/login.php" </script>';
      }
      else{
          echo "ohshit";
